@@ -311,7 +311,7 @@ process(){
 ipset=/\1/'$IPSET_NAME'#g' > $CONF_TMP_FILE
         elif [ $WITH_NFTSET -eq 1 ]; then
             _green 'Nftset rules included.'
-            sort -u $DOMAIN_FILE | $SED_ERES 's@(.+)@server=/\1/'$DNS_IP'\@'$DNS_PORT'\
+            sort -u $DOMAIN_FILE | $SED_ERES 's@(.+)@server=/\1/'$DNS_IP'\#'$DNS_PORT'\
 nftset=/\1/'$NFTSET_NAME'@g' > $CONF_TMP_FILE
         else
             _green 'Ipset rules not included.'
